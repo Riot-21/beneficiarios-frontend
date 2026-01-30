@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f4f6; 
+  color: #111827; 
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input:focus {
+  outline: none;
+  border-color: #24266e; 
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; backdrop-filter: blur(0px); }
+  to   { opacity: 1; backdrop-filter: blur(4px); }
+}
+
+@keyframes modalFadeOut {
+  from { opacity: 1; backdrop-filter: blur(4px); }
+  to   { opacity: 0; backdrop-filter: blur(0px); }
+}
+
+.modal-blur-enter {
+  animation: modalFadeIn .25s ease-out forwards;
+}
+
+.modal-blur-exit {
+  animation: modalFadeOut .25s ease-in forwards;
+}
+
+
+
+@keyframes modalScaleIn {
+  from { opacity: 0; transform: scale(.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes modalScaleOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(.9); }
+}
+
+.modal-scale-enter {
+  animation: modalScaleIn .25s ease-out forwards;
+}
+
+.modal-scale-exit {
+  animation: modalScaleOut .25s ease-in forwards;
+}
